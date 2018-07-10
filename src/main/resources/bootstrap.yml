@@ -1,0 +1,21 @@
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: configServer
+      profile: dev
+  #如果使用配置中心，这个配置要放置到本地加载配置文件中，否则注册名称和后续的加载配置文件都无法去找对应的名称和资源
+  application:
+    name: zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9001/eureka/
+    enabled: true
+    
+zuul:
+  sensitive-headers:
+  - "*"
+    
+
